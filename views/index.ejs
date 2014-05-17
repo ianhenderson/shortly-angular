@@ -1,1 +1,18 @@
-<div ng-app="something"></div>
+<div ng-app="Shortly">
+
+  <div ng-controller="linksController">
+    <div ng-repeat="link in links" >
+      <div> {{link.title}} </div>
+      <div> {{link.url}} </div>
+      <div> {{link.base_url}}/{{link.code}} </div>
+      <div> Visits: {{link.visits}} </div>
+    </div>
+  </div>
+
+  <form ng-submit="submit()" ng-controller="shortenController">
+    <input type="text" ng-model="text" />
+    <input type="submit" id="submit" value="Submit link!" />
+  </form>
+
+</div>
+
