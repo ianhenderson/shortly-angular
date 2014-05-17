@@ -1,10 +1,17 @@
 <div ng-controller="linksController">
-  <div class="link" ng-repeat="link in links" >
-    <div class="title"> {{link.title}} </div>
+  <input  class="query" ng-model="query" placeholder="What query you?">
+  <select ng-model="selector" ng-options="property for property in properties" ></select>
+  <div class="link" ng-repeat="link in links | orderBy:selector | filter:query " >
+  <div class="info">
+    <div class="visits">
+      <span class="count"> {{link.visits}} </span> visits
+    </div>
     <div class="original"> {{link.url}} </div>
-    <div class="info"> {{link.base_url}}/{{link.code}} </div>
-    <div class="visits"> Visits:
-      <span class="count"> {{link.visits}} </span>
+    <div class="title"> {{link.title}} </div>
+    <a href="{{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
+
+  </div>
+
     </div>
   </div>
 </div>

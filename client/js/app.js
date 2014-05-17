@@ -1,10 +1,11 @@
 var app = angular.module('Shortly', ['ngRoute'])
   .controller('linksController', function($scope, $http){
-
+    $scope.predicate = "-" + $scope.selector;
     $http({method: 'GET', url: 'http://localhost:4568/links'}).
       success(function(data, status, headers, config) {
         $scope.links = data;
-        console.log(data);
+        $scope.properties = Object.keys($scope.links[0]);
+        console.log($scope.predicate);
       }).
       error(function(data, status, headers, config) {
       });

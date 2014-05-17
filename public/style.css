@@ -93,8 +93,12 @@ h1 {
   font-size: 12px;
 }
 
-.link .info {
+.link .info  {
   margin-left: 55px;
+}
+
+.query {
+  text-align: center;
 }
 
 form {
