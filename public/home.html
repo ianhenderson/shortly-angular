@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shortly</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="lib/jquery.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-app="Shortly">
+    <h1>Shortly</h1>
+
+    <h2>Links</h2>
+    <div ng-controller="linksController as Links">
+      <ol>
+        <li ng-repeat="link in links"> {{ link }} </li>
+      </ol>
+    </div>
+
+  </body>
+</html>
